@@ -3,7 +3,8 @@ INSERT INTO institute VALUES
 ('PHYS', 'Institut för Fysik'),
 ('BIO', 'Institut för Biologi'),
 ('HIST', 'Institut för Historia'),
-('ART', 'Institut för Konst');
+('ART', 'Institut för Konst'),
+('FREE', 'Institut för fristående kurser');
 
 
 
@@ -102,43 +103,78 @@ VALUES
   ('ART', 'DKIM'),
   ('ART', 'KVKR'),
   ('ART', 'MTXD');
-
--- Kurser kopplade till Mattematik (MATH)
+-- Kurser kopplade till Matematik (MATH)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH01', 'Grundläggande Matematik I', 7, 'MATH');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH02', 'Avancerad Kalkyl', 8, 'MATH');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH03', 'Linjär Algebra och Geometri', 7, 'MATH');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH04', 'Differentialekvationer', 7, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH05', 'Matematisk Statistik', 8, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH06', 'Tillämpad Numerisk Analys', 8, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH07', 'Kombinatorik och Grafer', 7, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH08', 'Algebraisk Strukturteori', 8, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH09', 'Optimering och Operationsanalys', 8, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH10', 'Avancerad Tillämpad Matematik', 9, 'MATH');
 
 -- Kurser kopplade till Fysik (PHYS)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS01', 'Klassisk Mekanik', 8, 'PHYS');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS02', 'Elektromagnetism', 8, 'PHYS');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS03', 'Kvantmekanik', 7, 'PHYS');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS04', 'Termodynamik och Statistisk Fysik', 7, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS05', 'Modern Fysik', 8, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS06', 'Astrofysik', 8, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS07', 'Fysikaliska Metoder och Mätteknik', 7, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS08', 'Teoretisk Partikelfysik', 9, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS09', 'Kärnfysik och Kärnpartikelfysik', 9, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS10', 'Energifysik och Miljö', 8, 'PHYS');
 
 -- Kurser kopplade till Konst (ARTS)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS01', 'Måleri och Skulptur', 6, 'ART');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS02', 'Digital Konst och Design', 7, 'ART');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS03', 'Teater och Performancekonst', 8, 'ART');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS04', 'Konsthistoria och Estetik', 7, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS05', 'Avancerade Konstformer', 8, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS06', 'Grafisk Design och Illustration', 7, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS07', 'Interaktiv Konst och Virtuell Verklighet', 8, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS08', 'Skulptur och Installation', 8, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS09', 'Konstvetenskaplig Forskning och Analys', 9, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS10', 'Konst och Samhälle', 7, 'ART');
+
 -- Kurser kopplade till Historia (HIST)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST01', 'Medeltidens Historia', 7, 'HIST');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST02', 'Modern Världshistoria', 8, 'HIST');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST03', 'Ekonomisk Historia', 7, 'HIST');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST04', 'Politik och Kultur under 1900-talet', 8, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST05', 'Historisk Forskningsmetodik', 8, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST06', 'Global Historia', 8, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST07', 'Kulturarv och Museologi', 7, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST08', 'Historisk Geografi och Kartografi', 8, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST09', 'Digital Historia och Arkivvetenskap', 9, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST10', 'Historia och Samhällsutveckling', 7, 'HIST');
 
 -- Kurser kopplade till Biologi (BIO)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO01', 'Cellbiologi', 7, 'BIO');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO02', 'Genetik och Molekylärbiologi', 8, 'BIO');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO03', 'Ekologi och Miljövetenskap', 7, 'BIO');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO04', 'Marinbiologi och Bioteknik', 8, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO05', 'Avancerade Biologiska Metoder', 8, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO06', 'Immunologi och Virologi', 7, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO07', 'Genomik och Bioinformatik', 8, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO08', 'Biokemi och Molekylär Medicin', 8, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO09', 'Miljöbioteknik och Hållbarhet', 9, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO10', 'Neurobiologi och Psykobiologi', 7, 'BIO');
 
 -- Fristående kurser
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('CSCI01', 'Introduktion till Datorvetenskap', 6, NULL);
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHIL01', 'Introduktion till Filosofi', 5, NULL);
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG01', 'Inledande Språkkurs', 6, NULL);
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ECON01', 'Mikroekonomi', 7, NULL);
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PSYC01', 'Allmän Psykologi', 6, NULL);
-INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI01', 'Musikteori och Komposition', 8, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('CSCI01', 'Introduktion till Datorvetenskap', 6, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHIL01', 'Introduktion till Filosofi', 5, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG01', 'Inledande Språkkurs', 6, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ECON01', 'Mikroekonomi', 7, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PSYC01', 'Allmän Psykologi', 6, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI01', 'Musikteori och Komposition', 8, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI02', 'Avancerad Musikkomposition', 8, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('CSCI02', 'Algoritmer och Datastrukturer', 7, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHIL02', 'Etik och Moral', 6, 'FREE');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG02', 'Avancerad Språkkurs', 7, 'FREE');
+
 
 -- Matematik
 INSERT INTO branch (branch_id, program_id)
