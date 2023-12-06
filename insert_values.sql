@@ -140,37 +140,73 @@ INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ECON01', 'M
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PSYC01', 'Allmän Psykologi', 6, NULL);
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI01', 'Musikteori och Komposition', 8, NULL);
 
--- Grenar inom Matematik-programmen
-INSERT INTO branch (branch_id, program_id) VALUES ('Tillämpad Matematik och Statistik', 'TAMS');
-INSERT INTO branch (branch_id, program_id) VALUES ('Datavetenskap och Matematik', 'DAVM');
-INSERT INTO branch (branch_id, program_id) VALUES ('Finansiell Matematik och Riskhantering', 'FMRH');
-INSERT INTO branch (branch_id, program_id) VALUES ('Matematisk Modellering och Simulering', 'MAMS');
-INSERT INTO branch (branch_id, program_id) VALUES ('Algebra och Kryptografi', 'ALKR');
---dgfdkwoa
--- Grenar inom Fysik-programmen
-INSERT INTO branch (branch_id, program_id) VALUES ('Teoretisk Fysik och Partikelfysik', 'TFPP');
-INSERT INTO branch (branch_id, program_id) VALUES ('Kvantfysik och Nanoteknologi', 'KQNT');
-INSERT INTO branch (branch_id, program_id) VALUES ('Astrofysik och Kosmologi', 'AKOS');
-INSERT INTO branch (branch_id, program_id) VALUES ('Medicinsk Fysik och Teknik', 'MFTE');
-INSERT INTO branch (branch_id, program_id) VALUES ('Energifysik och Hållbar Utveckling', 'EFHU');
+-- Matematik
+INSERT INTO branch (branch_id, program_id)
+VALUES
+('Masterexamen i Tillämpad Matematik och Statistik', 'TAMS'),
+('Doktorsexamen i Tillämpad Matematik och Statistik', 'TAMS'),
+('Masterexamen i Datavetenskap och Matematik', 'DAVM'),
+('Fellowship in Dataanalys och Teknologi', 'DAVM'),
+('Masterexamen i Finansiell Matematik och Riskhantering', 'FMRH'),
+('Yrkesintyg i Finansiell Modellering', 'FMRH'),
+('Masterexamen i Matematisk Modellering och Simulering', 'MAMS'),
+('Doktorsexamen i Matematisk Simulering och Modellering', 'MAMS'),
+('Avancerad Algebra och Kryptografi', 'ALKR'),
+('Certifikat i Algebra och Kryptografi', 'ALKR');
 
--- Grenar inom Biologi-programmen
-INSERT INTO branch (branch_id, program_id) VALUES ('Molekylärbiologi och Genetik', 'MBGG');
-INSERT INTO branch (branch_id, program_id) VALUES ('Ekologi och Naturbevarande', 'ENNB');
-INSERT INTO branch (branch_id, program_id) VALUES ('Medicinsk Biokemi och Farmakologi', 'MBFA');
-INSERT INTO branch (branch_id, program_id) VALUES ('Mikrobiologi och Immunologi', 'MIIM');
-INSERT INTO branch (branch_id, program_id) VALUES ('Marinbiologi och Ekotoxikologi', 'MBET');
+-- Fysik
+INSERT INTO branch (branch_id, program_id)
+VALUES
+('Masterexamen i Teoretisk Fysik och Partikelfysik', 'TFPP'),
+('Doktorsexamen i Teoretisk Fysik och Partikelfysik', 'TFPP'),
+('Kandidatexamen i Kvantfysik och Nanoteknologi', 'KQNT'),
+('Diplom i Nanoteknologi och Kvantmekanik', 'KQNT'),
+('Masterexamen i Astrofysik och Kosmologi', 'AKOS'),
+('Postgraduate Certificate in Astrofysik och Kosmologi', 'AKOS'),
+('Masterexamen i Medicinsk Fysik och Teknik', 'MFTE'),
+('Fellowship in Medicinsk Teknologi och Avbildning', 'MFTE'),
+('Energifysik och Hållbar Utveckling', 'EFHU'),
+('Diploma i Hållbar Energiexpertis', 'EFHU');
 
--- Grenar inom Historia-programmen
-INSERT INTO branch (branch_id, program_id) VALUES ('Film och Ljudvisuell Historia', 'HFAV');
-INSERT INTO branch (branch_id, program_id) VALUES ('Global Historia och Huvudområden', 'GHKA');
-INSERT INTO branch (branch_id, program_id) VALUES ('Digital Historia och Informationshistoria', 'DHIH');
-INSERT INTO branch (branch_id, program_id) VALUES ('Ekonomisk Historia och Samhällsutveckling', 'EHUS');
-INSERT INTO branch (branch_id, program_id) VALUES ('Politisk Historia och Internationella Relationer', 'PHIR');
+-- Biologi
+INSERT INTO branch (branch_id, program_id)
+VALUES
+('Masterexamen i Molekylärbiologi och Genetik', 'MBGG'),
+('Examen i Genetik och Molekylärbiologi', 'MBGG'),
+('Examensbevis i Ekologi och Naturbevarande', 'ENNB'),
+('Utmärkelse i Miljöbiologi och Naturvård', 'ENNB'),
+('Masterexamen i Medicinsk Biokemi och Farmakologi', 'MBFA'),
+('Certifikat i Medicinsk Biokemi och Farmakologi', 'MBFA'),
+('Masterexamen i Mikrobiologi och Immunologi', 'MIIM'),
+('Diploma i Mikrobiologi och Immunologi', 'MIIM'),
+('Magisterexamen i Marinbiologi och Ekotoxikologi', 'MBET'),
+('Expertkurs i Ekotoxikologi och Marinbiologi', 'MBET');
 
--- Grenar inom Konst-programmen
-INSERT INTO branch (branch_id, program_id) VALUES ('Bokkonst och Handgjort Papper', 'BHKK');
-INSERT INTO branch (branch_id, program_id) VALUES ('Skulptur och Kinetisk Konst', 'SKTR');
-INSERT INTO branch (branch_id, program_id) VALUES ('Digital Konst och Interaktiva Medier', 'DKIM');
-INSERT INTO branch (branch_id, program_id) VALUES ('Konstvetenskap och Kritik', 'KVKR');
-INSERT INTO branch (branch_id, program_id) VALUES ('Blandteknik Textildesign', 'MTXD');
+-- Historia
+INSERT INTO branch (branch_id, program_id)
+VALUES
+('PhD i Historisk Forskning och Arkivvetenskap', 'HFAV'),
+('Forskningsstipendium i Arkivvetenskap', 'HFAV'),
+('Magisterexamen i Global Historia och Kulturarv', 'GHKA'),
+('Doktorat i Global Historia och Kulturarv', 'GHKA'),
+('Doktorsexamen i Historisk Digital Informationshantering', 'DHIH'),
+('Internationellt Diplom i Informationshistoria', 'DHIH'),
+('Magisterexamen i Historia och Samhällsutveckling', 'EHUS'),
+('Specialistdiploma i Social- och Ekonomisk Historia', 'EHUS'),
+('Examensarbete i Politisk Historia och Internationella Relationer', 'PHIR'),
+('Specialistexamen i Politisk Historia och Internationella Relationer', 'PHIR');
+
+-- Konst
+INSERT INTO branch (branch_id, program_id)
+VALUES
+('Kandidatexamen i Bildkonst och Konsthantverk', 'BHKK'),
+('Avancerad Utbildning i Bildkonst och Konsthantverk', 'BHKK'),
+('Magisterexamen i Konst och Teaterregi', 'SKTR'),
+('Postgraduate Training in Scenkonst och Teaterregi', 'SKTR'),
+('Examen i Digital Konst och Interaktiva Medier', 'DKIM'),
+('Advanced Diploma i Konst och Interaktiva Medier', 'DKIM'),
+('Magisterexamen i Konstvetenskap och Kritik', 'KVKR'),
+('Certifikat i Konstvetenskap och Kritik', 'KVKR'),
+('Masterexamen i Mode och Textildesign', 'MTXD'),
+('Fördjupad Utbildning i Textildesign och Mode', 'MTXD');
+
