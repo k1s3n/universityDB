@@ -17,6 +17,9 @@ CREATE TABLE course (
     FOREIGN KEY (institute_id) REFERENCES institute(institute_id)
 );
 
+
+
+
 CREATE TABLE branch (
     branch_id VARCHAR(250) PRIMARY KEY,
     program_id VARCHAR(10),
