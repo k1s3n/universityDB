@@ -125,7 +125,7 @@ INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST01', 'M
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST02', 'Modern Världshistoria', 8, 'HIST');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST03', 'Ekonomisk Historia', 7, 'HIST');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST04', 'Politik och Kultur under 1900-talet', 8, 'HIST');
--dd
+
 -- Kurser kopplade till Biologi (BIO)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO01', 'Cellbiologi', 7, 'BIO');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO02', 'Genetik och Molekylärbiologi', 8, 'BIO');
@@ -139,3 +139,38 @@ INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG01', 'I
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ECON01', 'Mikroekonomi', 7, NULL);
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PSYC01', 'Allmän Psykologi', 6, NULL);
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI01', 'Musikteori och Komposition', 8, NULL);
+
+-- Grenar inom Matematik-programmen
+INSERT INTO branch (branch_id, program_id) VALUES ('Tillämpad Matematik och Statistik', 'TAMS');
+INSERT INTO branch (branch_id, program_id) VALUES ('Datavetenskap och Matematik', 'DAVM');
+INSERT INTO branch (branch_id, program_id) VALUES ('Finansiell Matematik och Riskhantering', 'FMRH');
+INSERT INTO branch (branch_id, program_id) VALUES ('Matematisk Modellering och Simulering', 'MAMS');
+INSERT INTO branch (branch_id, program_id) VALUES ('Algebra och Kryptografi', 'ALKR');
+--dgfdkwoa
+-- Grenar inom Fysik-programmen
+INSERT INTO branch (branch_id, program_id) VALUES ('Teoretisk Fysik och Partikelfysik', 'TFPP');
+INSERT INTO branch (branch_id, program_id) VALUES ('Kvantfysik och Nanoteknologi', 'KQNT');
+INSERT INTO branch (branch_id, program_id) VALUES ('Astrofysik och Kosmologi', 'AKOS');
+INSERT INTO branch (branch_id, program_id) VALUES ('Medicinsk Fysik och Teknik', 'MFTE');
+INSERT INTO branch (branch_id, program_id) VALUES ('Energifysik och Hållbar Utveckling', 'EFHU');
+
+-- Grenar inom Biologi-programmen
+INSERT INTO branch (branch_id, program_id) VALUES ('Molekylärbiologi och Genetik', 'MBGG');
+INSERT INTO branch (branch_id, program_id) VALUES ('Ekologi och Naturbevarande', 'ENNB');
+INSERT INTO branch (branch_id, program_id) VALUES ('Medicinsk Biokemi och Farmakologi', 'MBFA');
+INSERT INTO branch (branch_id, program_id) VALUES ('Mikrobiologi och Immunologi', 'MIIM');
+INSERT INTO branch (branch_id, program_id) VALUES ('Marinbiologi och Ekotoxikologi', 'MBET');
+
+-- Grenar inom Historia-programmen
+INSERT INTO branch (branch_id, program_id) VALUES ('Film och Ljudvisuell Historia', 'HFAV');
+INSERT INTO branch (branch_id, program_id) VALUES ('Global Historia och Huvudområden', 'GHKA');
+INSERT INTO branch (branch_id, program_id) VALUES ('Digital Historia och Informationshistoria', 'DHIH');
+INSERT INTO branch (branch_id, program_id) VALUES ('Ekonomisk Historia och Samhällsutveckling', 'EHUS');
+INSERT INTO branch (branch_id, program_id) VALUES ('Politisk Historia och Internationella Relationer', 'PHIR');
+
+-- Grenar inom Konst-programmen
+INSERT INTO branch (branch_id, program_id) VALUES ('Bokkonst och Handgjort Papper', 'BHKK');
+INSERT INTO branch (branch_id, program_id) VALUES ('Skulptur och Kinetisk Konst', 'SKTR');
+INSERT INTO branch (branch_id, program_id) VALUES ('Digital Konst och Interaktiva Medier', 'DKIM');
+INSERT INTO branch (branch_id, program_id) VALUES ('Konstvetenskap och Kritik', 'KVKR');
+INSERT INTO branch (branch_id, program_id) VALUES ('Blandteknik Textildesign', 'MTXD');
