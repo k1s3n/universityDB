@@ -103,6 +103,8 @@ VALUES
   ('ART', 'DKIM'),
   ('ART', 'KVKR'),
   ('ART', 'MTXD');
+
+  -- KURS 01-05 = mandatory_course_program KURS 06-08 = recommended_course_branch, KURS 09-10 = mandatory_course_branch
 -- Kurser kopplade till Matematik (MATH)
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH01', 'Grundläggande Matematik I', 7, 'MATH');
 INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH02', 'Avancerad Kalkyl', 8, 'MATH');
