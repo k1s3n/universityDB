@@ -1,96 +1,141 @@
 INSERT INTO institute VALUES
-('math', 'Institut för Matematik'),
-('phys', 'Institut för Fysik'),
-('bio', 'Institut för Biologi'),
-('hist', 'Institut för Historia'),
-('art', 'Institut för Konst');
+('MATH', 'Institut för Matematik'),
+('PHYS', 'Institut för Fysik'),
+('BIO', 'Institut för Biologi'),
+('HIST', 'Institut för Historia'),
+('ART', 'Institut för Konst');
 
 
-SELECT * FROM program;
+
 
 /*---------------------PROGRAM------------------------------*/
 
 /*Matematik*/
-INSERT INTO program (program_id, name) VALUES ('TAMS', 'Tillämpad Matematik och Statistik');
-INSERT INTO program (program_id, name) VALUES ('DAVM', 'Datavetenskap och Matematik');
-INSERT INTO program (program_id, name) VALUES ('FMRH', 'Finansiell Matematik och Riskhantering');
-INSERT INTO program (program_id, name) VALUES ('MAMS', 'Matematisk Modellering och Simulering');
-INSERT INTO program (program_id, name) VALUES ('ALKR', 'Algebra och Kryptografi');
+INSERT INTO program (program_id, name) 
+VALUES
+('TAMS', 'Tillämpad Matematik och Statistik'),
+('DAVM', 'Datavetenskap och Matematik'),
+('FMRH', 'Finansiell Matematik och Riskhantering'),
+('MAMS', 'Matematisk Modellering och Simulering'),
+('ALKR', 'Algebra och Kryptografi');
 
 -- Fysik
-INSERT INTO program (program_id, name) VALUES ('TFPP', 'Teoretisk Fysik och Partikelfysik');
-INSERT INTO program (program_id, name) VALUES ('KQNT', 'Kvantfysik och Nanoteknologi');
-INSERT INTO program (program_id, name) VALUES ('AKOS', 'Astrofysik och Kosmologi');
-INSERT INTO program (program_id, name) VALUES ('MFTE', 'Medicinsk Fysik och Teknik');
-INSERT INTO program (program_id, name) VALUES ('EFHU', 'Energifysik och Hållbar Utveckling');
+INSERT INTO program (program_id, name) 
+VALUES
+('TFPP', 'Teoretisk Fysik och Partikelfysik'),
+('KQNT', 'Kvantfysik och Nanoteknologi'),
+('AKOS', 'Astrofysik och Kosmologi'),
+('MFTE', 'Medicinsk Fysik och Teknik'),
+('EFHU', 'Energifysik och Hållbar Utveckling');
 
 -- Biologi
-INSERT INTO program (program_id, name) VALUES ('MBGG', 'Molekylärbiologi och Genetik');
-INSERT INTO program (program_id, name) VALUES ('ENNB', 'Ekologi och Naturbevarande');
-INSERT INTO program (program_id, name) VALUES ('MBFA', 'Medicinsk Biokemi och Farmakologi');
-INSERT INTO program (program_id, name) VALUES ('MIIM', 'Mikrobiologi och Immunologi');
-INSERT INTO program (program_id, name) VALUES ('MBET', 'Marinbiologi och Ekotoxikologi');
-SELECT * FROM institute;
+INSERT INTO program (program_id, name)
+VALUES
+('MBGG', 'Molekylärbiologi och Genetik'),
+('ENNB', 'Ekologi och Naturbevarande'),
+('MBFA', 'Medicinsk Biokemi och Farmakologi'),
+('MIIM', 'Mikrobiologi och Immunologi'),
+('MBET', 'Marinbiologi och Ekotoxikologi');
 
 -- Historia
-INSERT INTO program (program_id, name) VALUES ('HFAV', 'Historisk Forskning och Arkivvetenskap');
-INSERT INTO program (program_id, name) VALUES ('GHKA', 'Global Historia och Kulturarv');
-INSERT INTO program (program_id, name) VALUES ('DHIH', 'Digital Historia och Informationshantering');
-INSERT INTO program (program_id, name) VALUES ('EHUS', 'Ekonomisk Historia och Samhällsutveckling');
-INSERT INTO program (program_id, name) VALUES ('PHIR', 'Politisk Historia och Internationella Relationer');
+INSERT INTO program (program_id, name)
+VALUES 
+('HFAV', 'Historisk Forskning och Arkivvetenskap'),
+('GHKA', 'Global Historia och Kulturarv'),
+('DHIH', 'Digital Historia och Informationshantering'),
+('EHUS', 'Ekonomisk Historia och Samhällsutveckling'),
+('PHIR', 'Politisk Historia och Internationella Relationer');
 
 -- Konst
-INSERT INTO program (program_id, name) VALUES ('BHKK', 'Bildkonst och Konsthantverk');
-INSERT INTO program (program_id, name) VALUES ('SKTR', 'Scenkonst och Teaterregi');
-INSERT INTO program (program_id, name) VALUES ('DKIM', 'Digital Konst och Interaktiva Medier');
-INSERT INTO program (program_id, name) VALUES ('KVKR', 'Konstvetenskap och Kritik');
-INSERT INTO program (program_id, name) VALUES ('MTXD', 'Mode och Textildesign');
+INSERT INTO program (program_id, name) 
+VALUES
+('BHKK', 'Bildkonst och Konsthantverk'),
+('SKTR', 'Scenkonst och Teaterregi'),
+('DKIM', 'Digital Konst och Interaktiva Medier'),
+('KVKR', 'Konstvetenskap och Kritik'),
+('MTXD', 'Mode och Textildesign');
 
 
 
-
+--- instutituion_program---
 -- Matematik
 INSERT INTO institution_program (institute_id, program_id)
 VALUES
-  ('math', 'TAMS'),
-  ('math', 'DAVM'),
-  ('math', 'FMRH'),
-  ('math', 'MAMS'),
-  ('math', 'ALKR');
+  ('MATH', 'TAMS'),
+  ('MATH', 'DAVM'),
+  ('MATH', 'FMRH'),
+  ('MATH', 'MAMS'),
+  ('MATH', 'ALKR');
 
 -- Fysik
 INSERT INTO institution_program (institute_id, program_id)
 VALUES
-  ('phys', 'TFPP'),
-  ('phys', 'KQNT'),
-  ('phys', 'AKOS'),
-  ('phys', 'MFTE'),
-  ('phys', 'EFHU');
+  ('PHYS', 'TFPP'),
+  ('PHYS', 'KQNT'),
+  ('PHYS', 'AKOS'),
+  ('PHYS', 'MFTE'),
+  ('PHYS', 'EFHU');
 
 -- Biologi
 INSERT INTO institution_program (institute_id, program_id)
 VALUES
-  ('bio', 'MBGG'),
-  ('bio', 'ENNB'),
-  ('bio', 'MBFA'),
-  ('bio', 'MIIM'),
-  ('bio', 'MBET');
+  ('BIO', 'MBGG'),
+  ('BIO', 'ENNB'),
+  ('BIO', 'MBFA'),
+  ('BIO', 'MIIM'),
+  ('BIO', 'MBET');
 
 -- Historia
 INSERT INTO institution_program (institute_id, program_id)
 VALUES
-  ('hist', 'HFAV'),
-  ('hist', 'GHKA'),
-  ('hist', 'DHIH'),
-  ('hist', 'EHUS'),
-  ('hist', 'PHIR');
+  ('HIST', 'HFAV'),
+  ('HIST', 'GHKA'),
+  ('HIST', 'DHIH'),
+  ('HIST', 'EHUS'),
+  ('HIST', 'PHIR');
 
 -- Konst
 INSERT INTO institution_program (institute_id, program_id)
 VALUES
-  ('art', 'BHKK'),
-  ('art', 'SKTR'),
-  ('art', 'DKIM'),
-  ('art', 'KVKR'),
-  ('art', 'MTXD');
+  ('ART', 'BHKK'),
+  ('ART', 'SKTR'),
+  ('ART', 'DKIM'),
+  ('ART', 'KVKR'),
+  ('ART', 'MTXD');
 
+-- Kurser kopplade till Mattematik (MATH)
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH01', 'Grundläggande Matematik I', 7, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH02', 'Avancerad Kalkyl', 8, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH03', 'Linjär Algebra och Geometri', 7, 'MATH');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MATH04', 'Differentialekvationer', 7, 'MATH');
+
+-- Kurser kopplade till Fysik (PHYS)
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS01', 'Klassisk Mekanik', 8, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS02', 'Elektromagnetism', 8, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS03', 'Kvantmekanik', 7, 'PHYS');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHYS04', 'Termodynamik och Statistisk Fysik', 7, 'PHYS');
+
+-- Kurser kopplade till Konst (ARTS)
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS01', 'Måleri och Skulptur', 6, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS02', 'Digital Konst och Design', 7, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS03', 'Teater och Performancekonst', 8, 'ART');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ARTS04', 'Konsthistoria och Estetik', 7, 'ART');
+-- Kurser kopplade till Historia (HIST)
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST01', 'Medeltidens Historia', 7, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST02', 'Modern Världshistoria', 8, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST03', 'Ekonomisk Historia', 7, 'HIST');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('HIST04', 'Politik och Kultur under 1900-talet', 8, 'HIST');
+
+-- Kurser kopplade till Biologi (BIO)
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO01', 'Cellbiologi', 7, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO02', 'Genetik och Molekylärbiologi', 8, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO03', 'Ekologi och Miljövetenskap', 7, 'BIO');
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('BIO04', 'Marinbiologi och Bioteknik', 8, 'BIO');
+
+-- Fristående kurser
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('CSCI01', 'Introduktion till Datorvetenskap', 6, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PHIL01', 'Introduktion till Filosofi', 5, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG01', 'Inledande Språkkurs', 6, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('ECON01', 'Mikroekonomi', 7, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('PSYC01', 'Allmän Psykologi', 6, NULL);
+INSERT INTO course (course_id, name, credits, institute_id) VALUES ('MUSI01', 'Musikteori och Komposition', 8, NULL);

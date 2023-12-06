@@ -93,7 +93,7 @@ CREATE TABLE institution_program (
     FOREIGN KEY (institute_id) REFERENCES institute(institute_id),
     FOREIGN KEY (program_id) REFERENCES program(program_id),
     PRIMARY KEY (institute_id, program_id)
-)
+);
 
 CREATE TABLE mandatory_course_program(
     course_id VARCHAR(6),
@@ -122,11 +122,3 @@ CREATE TABLE mandatory_course_branch(
     FOREIGN KEY(program_id) REFERENCES program(program_id),
     PRIMARY KEY(course_id, branch_id, program_id)
 );
-
-
-
-
-
-
-
- 
