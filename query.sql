@@ -6,3 +6,6 @@ JOIN program  p on i.program_id = p.program_id;
 
 SELECT * FROM branch
 WHERE program_id = 'DAVM'
+
+
+SELECT * FROM recommended_course_branch WHERE course_id = 'ARTS07';
