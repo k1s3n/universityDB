@@ -19,3 +19,7 @@ SELECT c.name AS Tillämpad_Matematik_och_Statistik FROM mandatory_course_progra
 JOIN course c ON c.course_id = mcp.course_id
 JOIN program p ON mcp.program_id = p.program_id
 WHERE p.name = 'Tillämpad Matematik och Statistik'
+
+
+SELECT * FROM student
+LEFT JOIN mandatory_course_program mcp ON student.program_id = mcp.program_id
