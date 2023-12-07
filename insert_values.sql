@@ -397,3 +397,9 @@ VALUES
 ('BIO04', 'MBET'),
 ('BIO05', 'MBET');
 
+INSERT INTO prerequisite(prerequisite_id, course_id)
+VALUES
+('CSCI01', 'CSCI02'),
+('MUSI01', 'MUSI02'),
+('LANG01', 'LANG02'),
+('PHIL01', 'PHIL02');
