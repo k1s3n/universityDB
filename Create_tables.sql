@@ -36,12 +36,18 @@ CREATE TABLE student (
     CONSTRAINT student_id CHECK (student_id SIMILAR TO '^[0-9]{8}-[0-9]{4}$')
 );
 
-CREATE TABLE classified (
+CREATE TABLE classification(
+    classification_id VARCHAR(250) PRIMARY KEY
+);
+
+CREATE TABLE classified_course (
     classification_id VARCHAR(250),
     course_id VARCHAR(6),
+    FOREIGN KEY (classification_id) REFERENCES classification(classification_id),
     FOREIGN KEY(course_id) REFERENCES course(course_id),
     PRIMARY KEY (classification_id, course_id)
 );
+
 
 CREATE TABLE prerequisite (
     prerequisite_id VARCHAR(6),

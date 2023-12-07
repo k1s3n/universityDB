@@ -682,3 +682,74 @@ INSERT INTO mandatory_course_branch (course_id, branch_id, program_id) VALUES
   ('ARTS10', 'Masterexamen i Mode och Textildesign', 'MTXD'),
   ('ARTS09', 'Fördjupad Utbildning i Textildesign och Mode', 'MTXD'),
   ('ARTS10', 'Fördjupad Utbildning i Textildesign och Mode', 'MTXD');
+
+
+INSERT INTO classification (classification_id)
+VALUES
+('matematik'),
+('forskning'),
+('seminarie'),
+('estetik');
+
+-- classified_course för alla kurser och deras klassificeringar
+INSERT INTO classified_course (classification_id, course_id)
+VALUES
+-- Matematik
+('matematik', 'MATH01'),
+('matematik', 'MATH02'),
+('matematik', 'MATH03'),
+('matematik', 'MATH04'),
+('matematik', 'MATH05'),
+('matematik', 'MATH06'),
+('matematik', 'MATH07'),
+('matematik', 'MATH08'),
+('matematik', 'MATH09'),
+('matematik', 'MATH10'),
+
+-- Fysik
+('forskning', 'PHYS01'),
+('forskning', 'PHYS02'),
+('forskning', 'PHYS03'),
+('forskning', 'PHYS04'),
+('forskning', 'PHYS05'),
+('forskning', 'PHYS06'),
+('forskning', 'PHYS07'),
+('forskning', 'PHYS08'),
+('forskning', 'PHYS09'),
+('forskning', 'PHYS10'),
+
+-- Konst
+('seminarie', 'ARTS01'),
+('seminarie', 'ARTS02'),
+('seminarie', 'ARTS03'),
+('seminarie', 'ARTS04'),
+('seminarie', 'ARTS05'),
+('seminarie', 'ARTS06'),
+('seminarie', 'ARTS07'),
+('seminarie', 'ARTS08'),
+('seminarie', 'ARTS09'),
+('seminarie', 'ARTS10'),
+
+-- Historia
+('seminarie', 'HIST01'),
+('seminarie', 'HIST02'),
+('seminarie', 'HIST03'),
+('seminarie', 'HIST04'),
+('seminarie', 'HIST05'),
+('seminarie', 'HIST06'),
+('seminarie', 'HIST07'),
+('seminarie', 'HIST08'),
+('seminarie', 'HIST09'),
+('seminarie', 'HIST10'),
+
+-- Biologi
+('estetik', 'BIO01'),
+('estetik', 'BIO02'),
+('estetik', 'BIO03'),
+('estetik', 'BIO04'),
+('estetik', 'BIO05'),
+('estetik', 'BIO06'),
+('estetik', 'BIO07'),
+('estetik', 'BIO08'),
+('estetik', 'BIO09'),
+('estetik', 'BIO10');
