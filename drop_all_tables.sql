@@ -14,4 +14,3 @@ DROP TABLE branch;
 DROP TABLE course;
 DROP TABLE program;
 DROP TABLE institute;
- 

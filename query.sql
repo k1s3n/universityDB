@@ -23,3 +23,7 @@ WHERE p.name = 'Tillämpad Matematik och Statistik'
 
 SELECT * FROM student
 LEFT JOIN mandatory_course_program mcp ON student.program_id = mcp.program_id
+SELECT * FROM student
+LEFT JOIN mandatory_course_program mcp ON student.program_id = mcp.program_id
+LEFT JOIN completed_course cc ON student.student_id = cc.student_id
+WHERE cc.grade_id = 

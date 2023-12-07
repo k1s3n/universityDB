@@ -33,7 +33,7 @@ CREATE TABLE student (
     FOREIGN KEY (program_id) REFERENCES program(program_id),
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id),
 
-    CONSTRAINT student_id CHECK (student_id SIMILAR TO '^[0-9]{8}-[0-9]{4}$')
+    CONSTRAINT student_id CHECK (student_id ~ '^[0-9]{6}-[0-9]{4}$')
 );
 
 CREATE TABLE classification(
@@ -89,7 +89,7 @@ CREATE TABLE completed_course(
     FOREIGN KEY (course_id) REFERENCES course(course_id),
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     PRIMARY KEY (course_id, student_id, grade_id),
-    CHECK (grade_id = 'u' OR grade_id SIMILAR TO '^[3-5]$')
+    CHECK (grade_id = 'u' OR grade_id ~ '^[3-5]$')
 );
 
 CREATE TABLE institution_program (

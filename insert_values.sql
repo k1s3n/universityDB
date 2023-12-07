@@ -753,3 +753,13 @@ VALUES
 ('estetik', 'BIO08'),
 ('estetik', 'BIO09'),
 ('estetik', 'BIO10');
+
+-- Students
+INSERT INTO student (student_id, name, program_id, branch_id)
+VALUES
+('950505-0001', 'Kristian Nilsson', 'SKTR', NULL),
+('691224-0001', 'Thomas Palmberg', 'EFHU', NULL);
+
+INSERT INTO completed_course (course_id, student_id, grade_id)
+VALUES 
+('ARTS01', '950505-0001', 5);
