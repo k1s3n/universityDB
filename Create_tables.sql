@@ -33,7 +33,7 @@ CREATE TABLE student (
     FOREIGN KEY (program_id) REFERENCES program(program_id),
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id),
 
-    CONSTRAINT student_id CHECK (student_id SIMILAR TO '^[0-9]{8}-[0-9]{4}$')
+    CONSTRAINT student_id CHECK (student_id ~ '^[0-9]{6}-[0-9]{4}$')
 );
 
 CREATE TABLE classification(
