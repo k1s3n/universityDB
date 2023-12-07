@@ -3,7 +3,6 @@ CREATE TABLE institute (
     name VARCHAR(250) UNIQUE
 );
 
-
 CREATE TABLE program (
     program_id VARCHAR(10) PRIMARY KEY,
     name VARCHAR(250) UNIQUE

@@ -7,8 +7,6 @@ INSERT INTO institute VALUES
 ('FREE', 'Institut för fristående kurser');
 
 
-
-
 /*---------------------PROGRAM------------------------------*/
 
 /*Matematik*/
@@ -103,6 +101,8 @@ VALUES
   ('ART', 'DKIM'),
   ('ART', 'KVKR'),
   ('ART', 'MTXD');
+
+
 
   -- KURS 01-05 = mandatory_course_program KURS 06-08 = recommended_course_branch, KURS 09-10 = mandatory_course_branch
 -- Kurser kopplade till Matematik (MATH)
@@ -247,4 +247,153 @@ VALUES
 ('Certifikat i Konstvetenskap och Kritik', 'KVKR'),
 ('Masterexamen i Mode och Textildesign', 'MTXD'),
 ('Fördjupad Utbildning i Textildesign och Mode', 'MTXD');
+
+
+
+-- mandatory_course_program 
+-- MATH
+INSERT INTO mandatory_course_program (course_id,program_id)
+VALUES
+('MATH01', 'TAMS'),
+('MATH02', 'TAMS'),
+('MATH03', 'TAMS'),
+('MATH04', 'TAMS'),
+('MATH05', 'TAMS'),
+('MATH01', 'DAVM'),
+('MATH02', 'DAVM'),
+('MATH03', 'DAVM'),
+('MATH04', 'DAVM'),
+('MATH05', 'DAVM'),
+('MATH01', 'FMRH'),
+('MATH02', 'FMRH'),
+('MATH03', 'FMRH'),
+('MATH04', 'FMRH'),
+('MATH05', 'FMRH'),
+('MATH01', 'MAMS'),
+('MATH02', 'MAMS'),
+('MATH03', 'MAMS'),
+('MATH04', 'MAMS'),
+('MATH05', 'MAMS'),
+('MATH01', 'ALKR'),
+('MATH02', 'ALKR'),
+('MATH03', 'ALKR'),
+('MATH04', 'ALKR'),
+('MATH05', 'ALKR');
+
+--FYSIK
+INSERT INTO mandatory_course_program (course_id, program_id)
+VALUES
+('PHYS01', 'TFPP'),
+('PHYS02', 'TFPP'),
+('PHYS03', 'TFPP'),
+('PHYS04', 'TFPP'),
+('PHYS05', 'TFPP'),
+('PHYS01', 'KQNT'),
+('PHYS02', 'KQNT'),
+('PHYS03', 'KQNT'),
+('PHYS04', 'KQNT'),
+('PHYS05', 'KQNT'),
+('PHYS01', 'AKOS'),
+('PHYS02', 'AKOS'),
+('PHYS03', 'AKOS'),
+('PHYS04', 'AKOS'),
+('PHYS05', 'AKOS'),
+('PHYS01', 'MFTE'),
+('PHYS02', 'MFTE'),
+('PHYS03', 'MFTE'),
+('PHYS04', 'MFTE'),
+('PHYS05', 'MFTE'),
+('PHYS01', 'EFHU'),
+('PHYS02', 'EFHU'),
+('PHYS03', 'EFHU'),
+('PHYS04', 'EFHU'),
+('PHYS05', 'EFHU');
+
+--ARTIST
+INSERT INTO mandatory_course_program (course_id, program_id)
+VALUES
+('ARTS01', 'BHKK'),
+('ARTS02', 'BHKK'),
+('ARTS03', 'BHKK'),
+('ARTS04', 'BHKK'),
+('ARTS05', 'BHKK'),
+('ARTS01', 'SKTR'),
+('ARTS02', 'SKTR'),
+('ARTS03', 'SKTR'),
+('ARTS04', 'SKTR'),
+('ARTS05', 'SKTR'),
+('ARTS01', 'DKIM'),
+('ARTS02', 'DKIM'),
+('ARTS03', 'DKIM'),
+('ARTS04', 'DKIM'),
+('ARTS05', 'DKIM'),
+('ARTS01', 'KVKR'),
+('ARTS02', 'KVKR'),
+('ARTS03', 'KVKR'),
+('ARTS04', 'KVKR'),
+('ARTS05', 'KVKR'),
+('ARTS01', 'MTXD'),
+('ARTS02', 'MTXD'),
+('ARTS03', 'MTXD'),
+('ARTS04', 'MTXD'),
+('ARTS05', 'MTXD');
+
+
+--HISTORY
+INSERT INTO mandatory_course_program (course_id, program_id)
+VALUES
+('HIST01', 'HFAV'),
+('HIST02', 'HFAV'),
+('HIST03', 'HFAV'),
+('HIST04', 'HFAV'),
+('HIST05', 'HFAV'),
+('HIST01', 'GHKA'),
+('HIST02', 'GHKA'),
+('HIST03', 'GHKA'),
+('HIST04', 'GHKA'),
+('HIST05', 'GHKA'),
+('HIST01', 'DHIH'),
+('HIST02', 'DHIH'),
+('HIST03', 'DHIH'),
+('HIST04', 'DHIH'),
+('HIST05', 'DHIH'),
+('HIST01', 'EHUS'),
+('HIST02', 'EHUS'),
+('HIST03', 'EHUS'),
+('HIST04', 'EHUS'),
+('HIST05', 'EHUS'),
+('HIST01', 'PHIR'),
+('HIST02', 'PHIR'),
+('HIST03', 'PHIR'),
+('HIST04', 'PHIR'),
+('HIST05', 'PHIR');
+
+--BIO
+INSERT INTO mandatory_course_program (course_id, program_id)
+VALUES
+('BIO01', 'MBGG'),
+('BIO02', 'MBGG'),
+('BIO03', 'MBGG'),
+('BIO04', 'MBGG'),
+('BIO05', 'MBGG'),
+('BIO01', 'ENNB'),
+('BIO02', 'ENNB'),
+('BIO03', 'ENNB'),
+('BIO04', 'ENNB'),
+('BIO05', 'ENNB'),
+('BIO01', 'MBFA'),
+('BIO02', 'MBFA'),
+('BIO03', 'MBFA'),
+('BIO04', 'MBFA'),
+('BIO05', 'MBFA'),
+('BIO01', 'MIIM'),
+('BIO02', 'MIIM'),
+('BIO03', 'MIIM'),
+('BIO04', 'MIIM'),
+('BIO05', 'MIIM'),
+('BIO01', 'MBET'),
+('BIO02', 'MBET'),
+('BIO03', 'MBET'),
+('BIO04', 'MBET'),
+('BIO05', 'MBET');
 
