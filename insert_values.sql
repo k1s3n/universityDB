@@ -777,9 +777,13 @@ VALUES
 VALUES
 ('LANG01', '691224-0001', NOW())
 */
+DELETE FROM register
+WHERE course_id = 'LANG01'
+SELECT * FROM waiting_list
+SELECT * FROM register
 INSERT INTO register (course_id, student_id)
 VALUES
-('LANG01', '691224-0001');
+('LANG01', '041224-6666');
 
 INSERT INTO waiting_list (course_id, student_id, position)
 VALUES

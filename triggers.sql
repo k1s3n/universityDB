@@ -49,7 +49,37 @@ FOR EACH ROW
 EXECUTE FUNCTION check_capacity();
 
 
+CREATE OR REPLACE FUNCTION move_from_waiting_list()
+RETURNS TRIGGER AS $$
+DECLARE
+    waiting_student RECORD;
+BEGIN
+    -- Hämta den äldsta (första) studenten från waiting_list för den aktuella kursen
+    SELECT * INTO waiting_student
+    FROM waiting_list
+    WHERE course_id = OLD.course_id
+    ORDER BY position
+    LIMIT 1;
 
+    -- Om det finns en student i waiting_list, flytta den till register
+    IF FOUND THEN
+        -- Ta bort studenten från waiting_list
+        DELETE FROM waiting_list
+        WHERE course_id = OLD.course_id AND student_id = waiting_student.student_id;
+
+        -- Lägg till studenten i register
+        INSERT INTO register(course_id, student_id)
+        VALUES (waiting_student.course_id, waiting_student.student_id);
+    END IF;
+
+    RETURN OLD;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER move_from_waiting_list_trigger
+AFTER DELETE ON register
+FOR EACH ROW
+EXECUTE FUNCTION move_from_waiting_list();
 
 
 
