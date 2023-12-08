@@ -19,13 +19,25 @@ SELECT * FROM  course
 WHERE institute_id = 'FREE'
 -- få ut vilka kurser student har fått betyg i och inte.
 
+
 SELECT * FROM waiting_list;
+DELETE FROM waiting_list
+WHERE course_id = 'LANG01'
 
 
+DELETE FROM register
+WHERE student_id = '041224-6666';
+
+
+DELETE FROM register
+WHERE course_id = 'LANG01';
 SELECT * FROM register
 
+UPDATE limit_course
+SET capacity = 1
+WHERE course_id = 'LANG01';
 
-
+SELECT * FROM limit_course
 
 
 

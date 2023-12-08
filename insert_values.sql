@@ -777,10 +777,11 @@ VALUES
 VALUES
 ('LANG01', '691224-0001', NOW())
 */
-
-
---Lägga till elev i en kurs
-
 INSERT INTO register (course_id, student_id)
 VALUES
-('LANG01', '950505-0001');
+('LANG01', '691224-0001');
+
+INSERT INTO waiting_list (course_id, student_id, position)
+VALUES
+('LANG01', '691224-0001', NOW())
+--Lägga till elev i en kurs

@@ -71,7 +71,7 @@ CREATE TABLE waiting_list(
     position TIMESTAMP,
     FOREIGN KEY (course_id) REFERENCES course(course_id),
     FOREIGN KEY (student_id) REFERENCES student(student_id),
-    PRIMARY KEY (course_id, student_id, position)
+    PRIMARY KEY (course_id, student_id)
 );
 
 CREATE TABLE register(
