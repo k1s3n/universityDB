@@ -117,13 +117,3 @@ CREATE TABLE recommended_course_branch(
     FOREIGN KEY(program_id) REFERENCES program(program_id),
     PRIMARY KEY(course_id, branch_id, program_id)
 );
-
-CREATE TABLE mandatory_course_branch(
-    course_id VARCHAR(6),
-    branch_id VARCHAR(250),
-    program_id VARCHAR(10),
-    FOREIGN KEY(course_id) REFERENCES course(course_id),
-    FOREIGN KEY(branch_id) REFERENCES branch(branch_id),
-    FOREIGN KEY(program_id) REFERENCES program(program_id),
-    PRIMARY KEY(course_id, branch_id, program_id)
-);

@@ -757,6 +757,7 @@ VALUES
 -- Students
 INSERT INTO student (student_id, name, program_id, branch_id)
 VALUES
+('041224-6666', 'Bert Karlsson', 'PHIR', Null),
 ('950505-0001', 'Kristian Nilsson', 'SKTR', NULL),
 ('691224-0001', 'Thomas Palmberg', 'EFHU', NULL);
 
