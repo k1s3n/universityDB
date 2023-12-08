@@ -42,7 +42,7 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-
+--Flyttar äldsta till register ifall man tar bort en registerat studen på en kurs
 CREATE TRIGGER check_capacity_trigger
 BEFORE INSERT ON register
 FOR EACH ROW
@@ -85,4 +85,4 @@ EXECUTE FUNCTION move_from_waiting_list();
 
 
 
-DROP TRIGGER IF EXISTS trigger_check_remaining_capacity ON university.register;
+DROP TRIGGER IF EXISTS "NAMNET" ON university.register;
