@@ -28,7 +28,6 @@ def execute_query(query, parameter=None):
         if conn:
             conn.close()
 
-
 @app.route("/")
 def hello_world():
     return render_template("index.html")
@@ -36,5 +35,5 @@ def hello_world():
 @app.route("/submit", methods=["POST"])
 def submit_answer():
     name = request.form.get("firstname")
-    query_result = execute_query("SELECT first_name, last_name, salary FROM employees WHERE first_name = %s", (name, ))
+    query_result = execute_query("SELECT * FROM course WHERE course_id LIKE %s", (f"%{name}%", ))
     return render_template("index.html", query_result= query_result)

@@ -4,44 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulär</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Employee database Secured</h1>
-    <p>Search for name in databas</p>
+    <h1>Course database</h1>
+    <p>Search for course in databas</p>
     <form action="/submit" method="post">
       <input name="firstname" type="text" />
       <button type="submit">Submit</button>
     </form>
     <table>
       <thead>
-        <th>Employee</th>
-        <th>Lastname</th>
-        <th>Salary</th>
-      </thead>
-      <tbody>
-        {% for row in query_result%}
-        <tr>
-          <td>{{row[0]}}</td>
-          <td>{{row[1]}}</td>
-          <td>{{row[2]}}</td>
-        </tr>
-        {% endfor %}
-        {%if not query_result%}
-        <td>Namnet hittades inte</td>
-        {%endif%}
-      </tbody>
-    </table>
-    <h1>Employee database not Secured</h1>
-    <p>Search for name in databas</p>
-    <form action="/submit2" method="post">
-      <input name="firstname" type="text" />
-      <button type="submit">Submit</button>
-    </form>
-    <table>
-      <thead>
-        <th>Employee</th>
-        <th>Lastname</th>
-        <th>Salary</th>
+        <th>Course_code</th>
+        <th>Name</th>
+        <th>Credits</th>
       </thead>
       <tbody>
         {% for row in query_result%}
