@@ -147,5 +147,10 @@ WHERE institute_id = 'FREE'
 
 
 
+-- se fristående kurser.
+SELECT * FROM  course
+WHERE institute_id = 'FREE'
 
- 
+
+-- se alla kurser med begränsade antal platser 
+SELECT * FROM limit_course

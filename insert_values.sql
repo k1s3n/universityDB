@@ -768,5 +768,13 @@ VALUES
 
 
 -- Lägga in värden för kurser som är "limit_course"
+INSERT INTO limit_course (course_id, capacity) 
+VALUES
+('LANG01', 1)
 
 -- lägga till värden för waiting_list
+
+INSERT INTO waiting_list (course_id, student_id, position)
+VALUES
+('LANG01', '691224-0001', NOW())
+
