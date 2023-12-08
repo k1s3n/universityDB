@@ -23,5 +23,8 @@ LEFT JOIN completed_course cc ON student.student_id = cc.student_id AND mcp.cour
 WHERE student.name = 'Kristian Nilsson'
 
 
+-- se fristående kurser.
+SELECT * FROM  course
+WHERE institute_id = 'FREE'
 
- 
+ SELECT * FROM limit_course
