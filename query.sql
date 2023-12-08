@@ -39,9 +39,13 @@ WHERE course_id = 'LANG01';
 
 SELECT * FROM limit_course
 
-
-
-
+SELECT * FROM completed_course
+UPDATE completed_course
+SET grade_id = 'u'
+WHERE student_id = '691224-0001'
+select 
+ALTER TABLE completed_course
+ADD COLUMN credits INT;
 
 
 

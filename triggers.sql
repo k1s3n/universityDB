@@ -81,8 +81,30 @@ AFTER DELETE ON register
 FOR EACH ROW
 EXECUTE FUNCTION move_from_waiting_list();
 
+--skapar en index för att förbättra prestandas
+CREATE INDEX waiting_list_position_idx ON waiting_list (position);
 
 
+CREATE OR REPLACE FUNCTION update_credits_on_grade_change()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.grade_id = 'u' THEN
+        NEW.credits := 0;
+    ELSE
+        -- Uppdatera credits baserat på betyget
+        SELECT credits INTO NEW.credits
+        FROM course
+        WHERE course_id = NEW.course_id;
+    END IF;
 
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Skapa en trigger för att köra funktionen före varje INSERT eller UPDATE på completed_course
+CREATE TRIGGER update_credits_trigger
+BEFORE INSERT OR UPDATE ON completed_course
+FOR EACH ROW
+EXECUTE FUNCTION update_credits_on_grade_change();
 
 DROP TRIGGER IF EXISTS "NAMNET" ON university.register;
