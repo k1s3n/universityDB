@@ -760,6 +760,12 @@ VALUES
 ('950505-0001', 'Kristian Nilsson', 'SKTR', NULL),
 ('691224-0001', 'Thomas Palmberg', 'EFHU', NULL);
 
+-- Completed course
 INSERT INTO completed_course (course_id, student_id, grade_id)
 VALUES 
 ('ARTS01', '950505-0001', 5);
+
+
+-- Lägga in värden för att kurser som är "limit_course"
+
+-- lägga till studenter värden för waiting_list

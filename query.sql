@@ -14,16 +14,14 @@ JOIN course c ON c.course_id = mcp.course_id
 JOIN program p ON mcp.program_id = p.program_id
 WHERE p.name = 'Tillämpad Matematik och Statistik'
 
---
-SELECT c.name AS Tillämpad_Matematik_och_Statistik FROM mandatory_course_program mcp
-JOIN course c ON c.course_id = mcp.course_id
-JOIN program p ON mcp.program_id = p.program_id
-WHERE p.name = 'Tillämpad Matematik och Statistik'
 
 
-SELECT * FROM student
-LEFT JOIN mandatory_course_program mcp ON student.program_id = mcp.program_id
-SELECT * FROM student
-LEFT JOIN mandatory_course_program mcp ON student.program_id = mcp.program_id
-LEFT JOIN completed_course cc ON student.student_id = cc.student_id
-WHERE cc.grade_id = 
+-- få ut vilka kurser student har fått betyg i och inte.
+SELECT student.name, mcp.course_id, cc.grade_id FROM mandatory_course_program mcp
+LEFT JOIN student ON mcp.program_id = student.program_id
+LEFT JOIN completed_course cc ON student.student_id = cc.student_id AND mcp.course_id = cc.course_id
+WHERE student.name = 'Kristian Nilsson'
+
+
+
+ 
