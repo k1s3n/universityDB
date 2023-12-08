@@ -27,4 +27,6 @@ WHERE student.name = 'Kristian Nilsson'
 SELECT * FROM  course
 WHERE institute_id = 'FREE'
 
- SELECT * FROM limit_course
+
+-- se alla kurser med begränsade antal platser 
+SELECT * FROM limit_course
