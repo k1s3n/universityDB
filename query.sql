@@ -19,12 +19,10 @@ SELECT * FROM  course
 WHERE institute_id = 'FREE'
 -- få ut vilka kurser student har fått betyg i och inte.
 
+SELECT * FROM waiting_list;
 
 
-
-
-
-
+SELECT * FROM register
 
 
 
