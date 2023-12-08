@@ -15,12 +15,136 @@ JOIN program p ON mcp.program_id = p.program_id
 WHERE p.name = 'Tillämpad Matematik och Statistik'
 
 
-
+SELECT * FROM  course
+WHERE institute_id = 'FREE'
 -- få ut vilka kurser student har fått betyg i och inte.
-SELECT student.name, mcp.course_id, cc.grade_id FROM mandatory_course_program mcp
-LEFT JOIN student ON mcp.program_id = student.program_id
-LEFT JOIN completed_course cc ON student.student_id = cc.student_id AND mcp.course_id = cc.course_id
-WHERE student.name = 'Kristian Nilsson'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
