@@ -766,6 +766,6 @@ VALUES
 ('ARTS01', '950505-0001', 5);
 
 
--- Lägga in värden för att kurser som är "limit_course"
+-- Lägga in värden för kurser som är "limit_course"
 
--- lägga till studenter värden för waiting_list
+-- lägga till värden för waiting_list
