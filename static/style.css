@@ -70,3 +70,11 @@ table {
     border-collapse: collapse;
     width: 40%;
 }
+
+tr:nth-child(even) td {
+    background-color: #f2f2f2; /* Ljusare färg */
+}
+
+tr:nth-child(odd) td {
+    background-color: #e6e6e6; /* Mörkare färg */
+}
