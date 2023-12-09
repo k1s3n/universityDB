@@ -48,11 +48,11 @@
         <button type="submit">Register</button>
     </form>
     {% if error_message %}
-        <p class="error-message">Error: {{ error_message }}</p>
+        <p class="error-message">{{ error_message }}</p>
     {% endif %}
 
     {% if insert %}
-        <h4>Registration successful! for {{student_id}}</h4>
+        <h3>Registration successful! for {{student_id}}</h3>
     {% endif %}
       <h5></h5>
     
@@ -67,7 +67,7 @@
       </form>
   
       {% if delete %}
-          <h4>Remove successful! for {{student}} from {{course}}</h4>
+          <h5>Remove successful! for {{student}} from {{course}}</h5>
       {% endif %}
       {% if delete_message%}
         <p class="error-message">{{delete_message}}</p>
