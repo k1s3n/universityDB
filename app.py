@@ -3,7 +3,6 @@ from psycopg2 import connect, DatabaseError, pool
 from dotenv import load_dotenv
 import os
 import logging
-
 from logging.handlers import RotatingFileHandler
 
 # logging to file app.log
@@ -29,20 +28,21 @@ db_pool = pool.SimpleConnectionPool(
     password=os.getenv("DB_CONNECT"),
 )
 
-def execute_query(query, parameter=None):
+def execute_query(query, parameter=None, fetch_result=False):
     connection = None
     try:
         connection = db_pool.getconn()
         with connection, connection.cursor() as cursor:
             cursor.execute(query, parameter)
             connection.commit()
-            if cursor.description:
+            if fetch_result:
                 return cursor.fetchall()
+            else:
+                return True
 
     except DatabaseError as error:
         logging.error(error)
-        raise  # Reraise the exception for higher-level error handling
-
+        return str(error)
     finally:
         if connection:
             db_pool.putconn(connection)
@@ -51,9 +51,28 @@ def execute_query(query, parameter=None):
 def hello_world():
     return render_template("index.html")
 
+@app.route("/register", methods=["POST", "GET"])
+def register_student():
+    if request.method == "POST":
+        student_id = request.form.get("student_id")
+        course_id = request.form.get("course_id")
+        
+        query = "INSERT INTO register(course_id, student_id) VALUES (%s, %s)"
+        values = (course_id.capitalize(), student_id)
+        
+        result = execute_query(query, values)
+        error = "antingen fel student_id eller course_id"
+        
+        if result is True:
+            return render_template("index.html", insert=True, student_id=student_id)
+        else:
+            return render_template("index.html", insert=False, error_message=error)
+    
+    return render_template("index.html", insert=False, error_message=None)
+
 @app.route("/submit", methods=["POST"])
 def submit_answer():
     name = request.form.get("course_id")
-    course_id = name.upper()
-    query_result = execute_query("SELECT * FROM course WHERE course_id LIKE %s", (f"%{course_id}%",))
+    course_id = name
+    query_result = execute_query("SELECT * FROM course WHERE name LIKE %s", (f"%{course_id}%",),fetch_result=True)
     return render_template("index.html", query_result=query_result)

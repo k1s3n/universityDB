@@ -32,3 +32,8 @@ a:hover {
 td:hover {
     background-color: #29648a; /* Ändra bakgrundsfärgen när du hovrar över th-elementet */
 }
+
+.error-message {
+    color: red;
+    font-weight: bold;
+}
