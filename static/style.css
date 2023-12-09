@@ -1,39 +1,72 @@
-/* Vanliga stildefinitioner för alla element */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    margin: 20px;
 }
 
-/* Stildefinitioner för td-element i tabeller */
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
-}
-
-/* Stildefinitioner för andra element om det behövs */
 h1 {
-    color: #0066cc;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    width: 40%;
+}
+
+h4 {
+    color: white;
+    background-color: #4CAF50;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 40%; 
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+
+input, button {
+    margin-top: 8px;
+    padding: 5px;
+    
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
 th {
-    text-align: center;
-}
-
-td {
-    text-align: center;
-}
-
-a:hover {
-    color: #000; /* Ändra färgen när du hovrar över länken */
-}
-
-/* Hover-effekt för th-elementen i tabellen */
-td:hover {
-    background-color: #29648a; /* Ändra bakgrundsfärgen när du hovrar över th-elementet */
+    background-color: #4CAF50;
+    color: white;
 }
 
 .error-message {
     color: red;
     font-weight: bold;
+}
+
+table {
+    border: 1px solid #ddd; /* Ram runt tabellen */
+    border-collapse: collapse;
+    width: 40%;
 }

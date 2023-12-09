@@ -8,9 +8,9 @@
 </head>
 <body>
     <th colspan="3"><h1>Course database</h1></th>
-    <h4>Search for name in registration course</h4>
+    <h4>Search For Student In Registered Course</h4>
     <form action="/check" method="post">
-      <input name="student_id" type="text" placeholder="exempel 'Bert Karlsson'"/>
+      <input name="student_id" type="text" placeholder="Enter name 'Bert Karlsson'"/>
       <button type="submit">Check</button>
     </form>
     <table>
@@ -37,14 +37,13 @@
   </tbody>
 </table>
 
-    <h4>Student Registration course</h4>
+    <h4>Register Student in a course</h4>
 
     <form action="/register" method="post">
       <label for="student_id">Student ID:</label>
-        <input type="text" name="student_id" pattern="[0-9]{6}-[0-9]{4}" maxlength="11" placeholder="XXXXXX-XXXX" required title="Please enter a valid student ID in the format XXXXXX-XXXX">-
+        <input type="text" name="student_id" pattern="[0-9]{6}-[0-9]{4}" maxlength="11" placeholder="XXXXXX-XXXX" required title="Please enter a valid student ID in the format XXXXXX-XXXX">
         <label for="course_id">Course ID:</label>
-        <input type="text" name="course_id" maxlength="6" placeholder="PHYS01" required>
-        
+        <input type="text" name="course_id" maxlength="6" placeholder="Enter course_id" required>
         <button type="submit">Register</button>
     </form>
     {% if error_message %}
@@ -54,10 +53,27 @@
     {% if insert %}
         <h4>Registration successful! for {{student_id}}</h4>
     {% endif %}
-      <h1></h1>
-        <h1></h1>
+      <h5></h5>
+    
+      <h4>Remove Student from course</h4>
+
+      <form action="/delete_student" method="post">
+        <label for="student_id">Student ID:</label>
+          <input type="text" name="student" pattern="[0-9]{6}-[0-9]{4}" maxlength="11" placeholder="XXXXXX-XXXX" required title="Please enter a valid student ID in the format XXXXXX-XXXX">
+          <label for="course_id">Course name:</label>
+          <input type="text" name="course" placeholder="Enter course name" required>
+          <button type="submit">Remove</button>
+      </form>
+  
+      {% if delete %}
+          <h4>Remove successful! for {{student}} from {{course}}</h4>
+      {% endif %}
+      {% if delete_message%}
+        <p class="error-message">{{delete_message}}</p>
+      {%endif%}
+      <h4>See avaible courses</h4>
     <form action="/submit" method="post">
-      <input name="course_id" type="text" placeholder="'search for course name'"/>
+      <input name="course_id" type="text" placeholder="'Enter course name'"/>
       <button type="submit">Search</button>
     </form>
     <table>
