@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Course database</h1>
-    <p>Search for course in databas</p>
+    <th colspan="3"><h1>Course database</h1></th>
+    <p>Search for course_id in databas</p>
     <form action="/submit" method="post">
-      <input name="firstname" type="text" placeholder="exempel 'BIO'"/>
+      <input name="course_id" type="text" placeholder="exempel 'BIO'"/>
       <button type="submit">Submit</button>
     </form>
     <table>
@@ -28,7 +28,9 @@
         </tr>
         {% endfor %}
         {%if not query_result%}
-        <td>Namnet hittades inte</td>
+        <h1></h1>
+        Namnet hittades inte
+        <h1></h1>
         {%endif%}
       </tbody>
     </table>
