@@ -29,6 +29,7 @@ DELETE FROM register
 WHERE student_id = '041224-6666';
 
 
+
 DELETE FROM register
 WHERE course_id = 'LANG01';
 SELECT * FROM register

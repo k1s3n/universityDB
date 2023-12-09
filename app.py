@@ -58,7 +58,7 @@ def register_student():
         course_id = request.form.get("course_id")
         
         query = "INSERT INTO register(course_id, student_id) VALUES (%s, %s)"
-        values = (course_id.capitalize(), student_id)
+        values = (course_id.upper(), student_id)
         
         result = execute_query(query, values)
         error = "antingen fel student_id eller course_id"
@@ -76,3 +76,17 @@ def submit_answer():
     course_id = name
     query_result = execute_query("SELECT * FROM course WHERE name LIKE %s", (f"%{course_id}%",),fetch_result=True)
     return render_template("index.html", query_result=query_result)
+
+
+@app.route("/check", methods=["POST"])
+def registered_course_student():
+    student = request.form.get("student_id")
+    error = "hittade inte studenten"
+    query = "SELECT * FROM registrations WHERE student = %s"
+    value = (student.title(),)
+    result = execute_query(query,value,fetch_result=True)
+    
+    if result:
+        return render_template("index.html", result=result)
+    else:
+        return render_template("index.html", error=error)

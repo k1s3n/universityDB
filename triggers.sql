@@ -30,7 +30,7 @@ BEGIN
     RAISE NOTICE 'Current Capacity: %, Max Capacity: %', current_capacity, max_capacity;
 
     -- Kontrollera om det finns plats i kursen
-    IF current_capacity < max_capacity THEN
+    IF max_capacity IS NULL OR current_capacity < max_capacity THEN
         RETURN NEW;
     ELSE
         -- Lägg till studenten i waiting_list-tabellen
@@ -42,7 +42,6 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
---Flyttar äldsta till register ifall man tar bort en registerat studen på en kurs
 CREATE TRIGGER check_capacity_trigger
 BEFORE INSERT ON register
 FOR EACH ROW
