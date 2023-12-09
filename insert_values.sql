@@ -766,6 +766,7 @@ INSERT INTO completed_course (course_id, student_id, grade_id)
 VALUES 
 ('ARTS01', '950505-0001', 5);
 ('PHIL02', '691224-0001', 'u');
+
 -- Lägga in värden för kurser som är "limit_course"
 INSERT INTO limit_course (course_id, capacity) 
 VALUES
@@ -776,14 +777,10 @@ VALUES
 VALUES
 ('LANG01', '691224-0001', NOW())
 */
-DELETE FROM waiting_list
-WHERE course_id = 'MATH03'
-SELECT * FROM waiting_list
-SELECT * FROM register
+
 INSERT INTO register (course_id, student_id)
 VALUES
-('PHYS05', '950505-0001'),
-('LANG01', '950505-0001');
+('LAGN01', '950505-0001'),
+('LANG01', '691224-0001'),
 
-SELECT * FROM register
---Lägga till elev i en kurs
+

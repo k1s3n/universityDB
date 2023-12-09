@@ -17,7 +17,6 @@ WHERE p.name = 'Tillämpad Matematik och Statistik'
 
 SELECT * FROM  course
 WHERE institute_id = 'FREE'
--- få ut vilka kurser student har fått betyg i och inte.
 
 
 SELECT * FROM waiting_list;
@@ -41,9 +40,12 @@ WHERE course_id = 'LANG01';
 SELECT * FROM limit_course
 
 SELECT * FROM completed_course
+
 UPDATE completed_course
 SET grade_id = 'u'
 WHERE student_id = '691224-0001'
+
+
 select 
 ALTER TABLE completed_course
 ADD COLUMN credits INT;
