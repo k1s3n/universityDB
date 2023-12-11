@@ -7,9 +7,13 @@
 
 # FOR WINDOWS USERS
 ---TERMINAL--
+
 -python venv venv
+
 -venv/scripts/activate
+
 -pip install -r requirements.txt
+
 -flask run --debug
 
 
@@ -17,6 +21,9 @@
 ---TERMINAL----
 
 python3 -m venv venv
+
 source venv/bin/activate
+
 pip install -r requirements.txt
+
 flask run --debug
