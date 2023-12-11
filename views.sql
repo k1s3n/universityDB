@@ -41,7 +41,6 @@ JOIN completed_course cc ON s.student_id = cc.student_id
 JOIN course c ON cc.course_id = c.course_id
 WHERE cc.grade_id = '5' OR cc.grade_id = '3' OR cc.grade_id = '4'
 
-SELECT * FROM passed_courses
 
 
 -- se alla registrerade och dom som står på reserv
@@ -56,6 +55,8 @@ FROM
     JOIN course c ON r.course_id = c.course_id
 UNION
 
+
+
 SELECT
     s.name,
     c.name,
@@ -64,6 +65,3 @@ FROM
     waiting_list w
     JOIN student s ON w.student_id = s.student_id
     JOIN course c ON w.course_id = c.course_id;
-
-
-SELECT * FROM registrations

@@ -35,6 +35,14 @@ def check_existing_registration(course_id, student_id):
 
     return bool(result)
 
+def is_student_in_waiting_list(course_id, student_id):
+    query = "SELECT * FROM waiting_list WHERE course_id = %s AND student_id = %s"
+    values = (course_id, student_id)
+    
+    result = execute_query(query, values)
+
+    return bool(result)
+
 def execute_query(query, parameter=None, fetch_result=False):
     connection = None
     try:
@@ -64,20 +72,29 @@ def register_student():
         student_id = request.form.get("student_id")
         course_id = request.form.get("course_id")
         
-        if check_existing_registration(course_id, student_id):
-            error_message = "Studenten är redan registrerad"
-            return render_template("index.html", insert=False, error_message=error_message)
-        
-        query = "INSERT INTO register(course_id, student_id) VALUES (%s, %s)"
+        if check_existing_registration(course_id, student_id): 
+            return render_template("index.html", insert=False, error_message="Studenten är redan registrerad")
+              
+        query = "INSERT INTO register(course_id, student_id) VALUES (%s, %s) RETURNING *"
         values = (course_id.upper(), student_id)
         
         result = execute_query(query, values)
-        error = "antingen fel student_id eller course_id"
         
-        if result is True:
-            return render_template("index.html", insert=True, student_id=student_id)
-        else:
-            return render_template("index.html", insert=False, error_message=error)
+        try:
+            result = execute_query(query, values)
+
+            if result is True:
+                return render_template("index.html", insert=True, student_id=student_id)
+            else:
+                is_waiting_list = is_student_in_waiting_list(course_id, student_id)
+                if is_waiting_list:
+                    return render_template("index.html", insert=False, error_message="Studenten är redan i väntelistan.")
+                else:
+                    return render_template("index.html", insert=False, error_message="antingen fel student_id eller course_id")
+
+        except Exception as e:
+            # Handle database or other exceptions
+            return render_template("index.html", insert=False, error_message=f"An error occurred: {str(e)}")
     
     return render_template("index.html", insert=False, error_message=None)
 
@@ -87,6 +104,7 @@ def submit_answer():
     course_id = name
     query_result = execute_query("SELECT * FROM course WHERE name LIKE %s", (f"%{course_id}%",),fetch_result=True)
     return render_template("index.html", query_result=query_result)
+
 
 
 @app.route("/check", methods=["POST"])
