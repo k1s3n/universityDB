@@ -1,5 +1,3 @@
-# HOW TO INSTALL FLASK + DATABASE TO WORK WITH IT
-
 # CREATE FILE
 .env (DB_CONNECT="database password")
 
