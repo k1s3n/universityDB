@@ -55,8 +55,6 @@ FROM
     JOIN course c ON r.course_id = c.course_id
 UNION
 
-
-
 SELECT
     s.name,
     c.name,
@@ -64,4 +62,6 @@ SELECT
 FROM
     waiting_list w
     JOIN student s ON w.student_id = s.student_id
-    JOIN course c ON w.course_id = c.course_id;
+    JOIN course c ON w.course_id = c.course_id
+ORDER BY status DESC;
+
