@@ -61,8 +61,6 @@ FROM
     JOIN course c ON r.course_id = c.course_id
 UNION
 
-
-
 SELECT
     s.name,
     c.name,
@@ -75,6 +73,7 @@ FROM
 -- Visar registrations
 
 SELECT * FROM registrations
+<<<<<<< HEAD
 
 
 --Olästa obligatoriska kurser för varje student.
@@ -87,3 +86,5 @@ FROM
     mandatory_course_program mcp
     
 
+=======
+>>>>>>> e0c9bf400327dcf1aebc32c4958af76e95754942
