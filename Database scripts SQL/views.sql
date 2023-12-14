@@ -73,7 +73,6 @@ FROM
 -- Visar registrations
 
 SELECT * FROM registrations
-<<<<<<< HEAD
 
 
 --Olästa obligatoriska kurser för varje student.
@@ -86,5 +85,29 @@ FROM
     mandatory_course_program mcp
     
 
-=======
->>>>>>> e0c9bf400327dcf1aebc32c4958af76e95754942
+CREATE VIEW unread_mandatory AS
+SELECT
+    s.student_id AS student,
+    c.course_id AS course
+FROM
+    student s
+JOIN
+    program p ON s.program_id = p.program_id
+JOIN
+    branch b ON s.branch_id = b.branch_id AND b.program_id = p.program_id
+JOIN
+    mandatory_course_branch mcb ON b.branch_id = mcb.branch_id AND p.program_id = mcb.program_id
+JOIN
+    course c ON mcb.course_id = c.course_id
+WHERE
+    c.course_id NOT IN (
+        SELECT
+            cc.course_id
+        FROM
+            completed_course cc
+        WHERE
+            cc.student_id = s.student_id
+    );
+
+--Visar vyn unread_mandatory
+SELECT * FROM unread_mandatory

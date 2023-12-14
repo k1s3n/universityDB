@@ -759,7 +759,8 @@ INSERT INTO student (student_id, name, program_id, branch_id)
 VALUES
 ('041224-6666', 'Bert Karlsson', 'PHIR', Null),
 ('950505-0001', 'Kristian Nilsson', 'SKTR', NULL),
-('691224-0001', 'Thomas Palmberg', 'EFHU', NULL);
+('691224-0001', 'Thomas Palmberg', 'EFHU', NULL),
+('123456-0001', 'Thomas Quick', 'HFAV', 'PhD i Historisk Forskning och Arkivvetenskap' );
 
 
 -- Lägga in värden för kurser som är "limit_course"
@@ -784,3 +785,6 @@ INSERT INTO completed_course (course_id, student_id, grade_id)
 VALUES 
 ('ARTS01', '950505-0001', 5),
 ('PHIL02', '691224-0001', 'u');
+
+
+--
