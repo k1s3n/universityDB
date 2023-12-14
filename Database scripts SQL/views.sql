@@ -21,13 +21,13 @@ SELECT
     s.name AS Student,
     c.name,
     cc.grade_id AS betyg,
-    cc.credits
+    c.credits
 FROM
     student s
 JOIN completed_course cc ON s.student_id = cc.student_id
 JOIN course c ON cc.course_id = c.course_id
 
-SELECT *FROM finished_courses;
+SELECT * FROM finished_courses;
 
 -- passed courses
 CREATE VIEW passed_courses AS
