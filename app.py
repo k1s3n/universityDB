@@ -105,13 +105,14 @@ def submit_answer():
     query_result = execute_query("SELECT * FROM course WHERE name LIKE %s", (f"%{course_id}%",),fetch_result=True)
     return render_template("index.html", query_result=query_result)
 
-
+#Här undviker vi SQL-injektionen nämnd i funktionen under genom att andvända
+#"parameterized queries" där vi passerar värdet som användaren söker efter via "value" variabeln och %s.
 
 @app.route("/check", methods=["POST"])
 def registered_course_student():
     student = request.form.get("student_id")
     error = "hittade inte studenten"
-    query = "SELECT * FROM registrations WHERE student = %s"
+    query = "SELECT * FROM student WHERE student_id = %s"
     value = (student.title(),)
     result = execute_query(query,value,fetch_result=True)
     
@@ -119,7 +120,23 @@ def registered_course_student():
         return render_template("index.html", result=result)
     else:
         return render_template("index.html",error=error)
+    
 
+    #I Följande del kod kan man med hjälp av t.ex. "1' OR '1' = '1' --" 
+    # inmatning få ut informationen om ALLA studenter som finns registrerade vilket skulle innebära en säkerhetsrisk. 
+@app.route("/check_unsafe", methods=["POST"])
+def registered_course_student123():
+    student = request.form.get("student_id")
+    error = "hittade inte studenten"
+    query = f"SELECT * FROM student WHERE student_id='{student}'"
+    value = (student.title(),)
+    result = execute_query(query,value,fetch_result=True)
+    
+    if result:
+        return render_template("index.html", result=result)
+    else:
+        return render_template("index.html",error=error)    
+    
 @app.route("/delete_student", methods=["POST", "GET"])
 def delete_student_from_course():
     if request.method == 'POST':
@@ -130,11 +147,11 @@ def delete_student_from_course():
         USING course
         WHERE register.student_id = %s
         AND register.course_id = course.course_id
-        AND course.name = %s
+        AND course.course_id = %s
         """
         value = (student,course.title())
         result = execute_query(query,value)
-        error = "Antingen är studenten redan borttagen eller namnet på kursen fel"
+        error = "Antingen är studenten redan borttagen eller namnet på kurs-ID fel"
         
         if result is True:
             return render_template("index.html", delete=True, student=student,course=course)
