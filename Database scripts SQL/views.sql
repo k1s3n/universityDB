@@ -27,6 +27,8 @@ FROM
 JOIN completed_course cc ON s.student_id = cc.student_id
 JOIN course c ON cc.course_id = c.course_id
 
+--Visar vyn "finished_courses" 
+
 SELECT * FROM finished_courses;
 
 -- passed courses
@@ -34,12 +36,16 @@ CREATE VIEW passed_courses AS
 SELECT
     s.name as student,
     c.name as Kurs,
-    cc.credits as poäng
+    c.credits as poäng
 FROM
     student s
 JOIN completed_course cc ON s.student_id = cc.student_id
 JOIN course c ON cc.course_id = c.course_id
 WHERE cc.grade_id = '5' OR cc.grade_id = '3' OR cc.grade_id = '4'
+
+--Visar vyn passed_courses
+
+SELECT * FROM passed_courses;
 
 
 
