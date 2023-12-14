@@ -761,11 +761,6 @@ VALUES
 ('950505-0001', 'Kristian Nilsson', 'SKTR', NULL),
 ('691224-0001', 'Thomas Palmberg', 'EFHU', NULL);
 
--- Completed course
-INSERT INTO completed_course (course_id, student_id, grade_id)
-VALUES 
-('ARTS01', '950505-0001', 5);
-('PHIL02', '691224-0001', 'u');
 
 -- Lägga in värden för kurser som är "limit_course"
 INSERT INTO limit_course (course_id, capacity) 
@@ -780,8 +775,12 @@ VALUES
 
 INSERT INTO register (course_id, student_id)
 VALUES
-('LAGN01', '950505-0001'),
-('LANG01', '691224-0001'),
+('LANG01', '950505-0001'),
+('LANG01', '691224-0001');
 
 
-O
+-- Completed course
+INSERT INTO completed_course (course_id, student_id, grade_id)
+VALUES 
+('ARTS01', '950505-0001', 5),
+('PHIL02', '691224-0001', 'u');

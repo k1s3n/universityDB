@@ -21,7 +21,7 @@ SELECT
     s.name AS Student,
     c.name,
     cc.grade_id AS betyg,
-    c.credits
+    cc.credits
 FROM
     student s
 JOIN completed_course cc ON s.student_id = cc.student_id
@@ -36,7 +36,7 @@ CREATE VIEW passed_courses AS
 SELECT
     s.name as student,
     c.name as Kurs,
-    c.credits as poäng
+    cc.credits as poäng
 FROM
     student s
 JOIN completed_course cc ON s.student_id = cc.student_id
@@ -75,3 +75,15 @@ FROM
 -- Visar registrations
 
 SELECT * FROM registrations
+
+
+--Olästa obligatoriska kurser för varje student.
+
+CREATE VIEW unread_mandatory AS
+SELECT
+    s.name AS student, 
+    mcp.course_id AS olästa_obligatoriska_kurs
+FROM 
+    mandatory_course_program mcp
+    
+

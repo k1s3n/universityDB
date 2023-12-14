@@ -86,6 +86,7 @@ CREATE TABLE completed_course(
     course_id VARCHAR(6),
     student_id VARCHAR(11),
     grade_id VARCHAR(1),
+    credits INT,
     FOREIGN KEY (course_id) REFERENCES course(course_id),
     FOREIGN KEY (student_id) REFERENCES student(student_id),
     PRIMARY KEY (course_id, student_id, grade_id),
