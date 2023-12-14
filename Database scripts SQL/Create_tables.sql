@@ -20,9 +20,10 @@ CREATE TABLE course (
 
 
 CREATE TABLE branch (
-    branch_id VARCHAR(250) PRIMARY KEY,
+    branch_id VARCHAR(250),
     program_id VARCHAR(10),
-    FOREIGN KEY (program_id) REFERENCES program(program_id)
+    FOREIGN KEY (program_id) REFERENCES program(program_id),
+    PRIMARY KEY (branch_id, program_id)
 );
 
 CREATE TABLE student (
@@ -32,7 +33,6 @@ CREATE TABLE student (
     branch_id VARCHAR(250),
     FOREIGN KEY (program_id) REFERENCES program(program_id),
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id),
-
     CONSTRAINT student_id CHECK (student_id ~ '^[0-9]{6}-[0-9]{4}$')
 );
 
