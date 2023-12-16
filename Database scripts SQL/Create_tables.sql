@@ -20,17 +20,18 @@ CREATE TABLE course (
 
 
 CREATE TABLE branch (
-    branch_id VARCHAR(250),
+    branch_id SERIAL,
+    branch_name VARCHAR(250),
     program_id VARCHAR(10),
     FOREIGN KEY (program_id) REFERENCES program(program_id),
-    PRIMARY KEY (branch_id, program_id)
+    PRIMARY KEY (branch_id)
 );
 
 CREATE TABLE student (
     student_id VARCHAR(11) PRIMARY KEY,
     name VARCHAR(250),
     program_id VARCHAR(10) NOT NULL,
-    branch_id VARCHAR(250),
+    branch_id INT,
     FOREIGN KEY (program_id) REFERENCES program(program_id),
     FOREIGN KEY (branch_id) REFERENCES branch(branch_id),
     CONSTRAINT student_id CHECK (student_id ~ '^[0-9]{6}-[0-9]{4}$')
@@ -111,7 +112,7 @@ CREATE TABLE mandatory_course_program(
 
 CREATE TABLE recommended_course_branch(
     course_id VARCHAR(6),
-    branch_id VARCHAR(250),
+    branch_id INT,
     program_id VARCHAR(10),
     FOREIGN KEY(course_id) REFERENCES course(course_id),
     FOREIGN KEY(branch_id) REFERENCES branch(branch_id),
@@ -121,7 +122,7 @@ CREATE TABLE recommended_course_branch(
 
 CREATE TABLE mandatory_course_branch(
     course_id VARCHAR(6),
-    branch_id VARCHAR(250),
+    branch_id INT,
     program_id VARCHAR(10),
     FOREIGN KEY(course_id) REFERENCES course(course_id),
     FOREIGN KEY(branch_id) REFERENCES branch(branch_id),

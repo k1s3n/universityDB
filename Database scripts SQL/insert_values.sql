@@ -179,7 +179,7 @@ INSERT INTO course (course_id, name, credits, institute_id) VALUES ('LANG02', 'A
 
 
 -- Matematik
-INSERT INTO branch (branch_id, program_id)
+INSERT INTO branch (branch_name, program_id)
 VALUES
 ('Masterexamen i Tillämpad Matematik och Statistik', 'TAMS'),
 ('Doktorsexamen i Tillämpad Matematik och Statistik', 'TAMS'),
@@ -193,7 +193,7 @@ VALUES
 ('Certifikat i Algebra och Kryptografi', 'ALKR');
 
 -- Fysik
-INSERT INTO branch (branch_id, program_id)
+INSERT INTO branch (branch_name, program_id)
 VALUES
 ('Masterexamen i Teoretisk Fysik och Partikelfysik', 'TFPP'),
 ('Doktorsexamen i Teoretisk Fysik och Partikelfysik', 'TFPP'),
@@ -207,7 +207,7 @@ VALUES
 ('Diploma i Hållbar Energiexpertis', 'EFHU');
 
 -- Biologi
-INSERT INTO branch (branch_id, program_id)
+INSERT INTO branch (branch_name, program_id)
 VALUES
 ('Masterexamen i Molekylärbiologi och Genetik', 'MBGG'),
 ('Examen i Genetik och Molekylärbiologi', 'MBGG'),
@@ -221,7 +221,7 @@ VALUES
 ('Expertkurs i Ekotoxikologi och Marinbiologi', 'MBET');
 
 -- Historia
-INSERT INTO branch (branch_id, program_id)
+INSERT INTO branch (branch_name, program_id)
 VALUES
 ('PhD i Historisk Forskning och Arkivvetenskap', 'HFAV'),
 ('Forskningsstipendium i Arkivvetenskap', 'HFAV'),
@@ -235,7 +235,7 @@ VALUES
 ('Specialistexamen i Politisk Historia och Internationella Relationer', 'PHIR');
 
 -- Konst
-INSERT INTO branch (branch_id, program_id)
+INSERT INTO branch (branch_name, program_id)
 VALUES
 ('Kandidatexamen i Bildkonst och Konsthantverk', 'BHKK'),
 ('Avancerad Utbildning i Bildkonst och Konsthantverk', 'BHKK'),
@@ -337,7 +337,7 @@ VALUES
 ('ARTS03', 'MTXD'),
 ('ARTS04', 'MTXD'),
 ('ARTS05', 'MTXD');
-
+SELECT * from branch
 
 --HISTORY
 INSERT INTO mandatory_course_program (course_id, program_id)
@@ -403,7 +403,7 @@ VALUES
 ('MUSI01', 'MUSI02'),
 ('LANG01', 'LANG02'),
 ('PHIL01', 'PHIL02');
-
+select * from branch;
 INSERT INTO recommended_course_branch (course_id, branch_id, program_id) VALUES
   ('MATH06', 'Masterexamen i Tillämpad Matematik och Statistik', 'TAMS'),
   ('MATH06', 'Doktorsexamen i Tillämpad Matematik och Statistik', 'TAMS'),
@@ -787,4 +787,4 @@ VALUES
 ('PHIL02', '691224-0001', 'u');
 
 
---
+SELECT * from register;

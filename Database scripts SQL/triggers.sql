@@ -106,4 +106,23 @@ BEFORE INSERT OR UPDATE ON completed_course
 FOR EACH ROW
 EXECUTE FUNCTION update_credits_on_grade_change();
 
-DROP TRIGGER IF EXISTS "NAMNET" ON university.register;
+CREATE OR REPLACE FUNCTION check_completed_course()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF EXISTS (
+        SELECT 1
+        FROM completed_course cc
+        WHERE cc.student_id = NEW.student_id
+        AND cc.course_id = NEW.course_id
+    ) THEN
+        RAISE EXCEPTION 'Student % has already completed course %', NEW.student_id, NEW.course_id;
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trigger_check_completed_course
+BEFORE INSERT
+ON register
+FOR EACH ROW
+EXECUTE FUNCTION check_completed_course();
