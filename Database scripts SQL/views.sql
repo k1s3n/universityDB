@@ -79,24 +79,15 @@ SELECT * FROM registrations
 
 CREATE VIEW unread_mandatory AS
 SELECT
-    s.name AS student, 
-    mcp.course_id AS olästa_obligatoriska_kurs
-FROM 
-    mandatory_course_program mcp
-    
-
-CREATE VIEW unread_mandatory AS
-SELECT
     s.student_id AS student,
+    s.name AS name,
     c.course_id AS course
 FROM
     student s
 JOIN
-    program p ON s.program_id = p.program_id
+    branch b ON s.branch_id = b.branch_id
 JOIN
-    branch b ON s.branch_id = b.branch_id AND b.program_id = p.program_id
-JOIN
-    mandatory_course_branch mcb ON b.branch_id = mcb.branch_id AND p.program_id = mcb.program_id
+    mandatory_course_branch mcb ON b.branch_id = mcb.branch_id
 JOIN
     course c ON mcb.course_id = c.course_id
 WHERE
@@ -107,7 +98,25 @@ WHERE
             completed_course cc
         WHERE
             cc.student_id = s.student_id
+    )
+UNION
+SELECT
+    s.student_id as student,
+    s.name AS name,
+    mcp.course_id AS course
+FROM
+    student s
+JOIN
+    mandatory_course_program mcp ON s.program_id = mcp.program_id
+WHERE
+    mcp.course_id NOT IN (
+        SELECT
+            cc.course_id
+        FROM
+            completed_course cc
+        WHERE
+            cc.student_id = s.student_id
     );
 
 --Visar vyn unread_mandatory
-SELECT * FROM unread_mandatory
+SELECT * FROM unread_mandatory ORDER BY name;
