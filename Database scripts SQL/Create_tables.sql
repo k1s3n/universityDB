@@ -17,8 +17,6 @@ CREATE TABLE course (
 );
 
 
-
-
 CREATE TABLE branch (
     branch_id VARCHAR(250),
     program_id VARCHAR(10),
