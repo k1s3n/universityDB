@@ -5,7 +5,7 @@ SELECT
     s.student_id AS idnr,
     s.name,
     p.name AS program,
-    b.branch_id AS branch
+    coalesce(b.branch_name, 'Not choosen')  AS branch
 FROM
     student s
 JOIN program p ON s.program_id = p.program_id
@@ -41,7 +41,7 @@ FROM
     student s
 JOIN completed_course cc ON s.student_id = cc.student_id
 JOIN course c ON cc.course_id = c.course_id
-WHERE cc.grade_id = '5' OR cc.grade_id = '3' OR cc.grade_id = '4'
+WHERE cc.grade_id IN ('3','4','5');
 
 --Visar vyn passed_courses
 
